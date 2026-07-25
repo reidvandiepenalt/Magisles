@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SpawnEntry" format=3 uid="uid://cl8ry6o37a1y"]
+
+[ext_resource type="PackedScene" uid="uid://cr543csvfdx28" path="res://Resources/tree.tscn" id="1_kf5s8"]
+[ext_resource type="Script" uid="uid://wnak7dixvmdn" path="res://Resources/SpawnEntry.gd" id="2_8c2tr"]
+
+[resource]
+script = ExtResource("2_8c2tr")
+scene = ExtResource("1_kf5s8")
+weight = 30
+metadata/_custom_type_script = "uid://wnak7dixvmdn"
