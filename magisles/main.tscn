@@ -10,13 +10,14 @@
 [ext_resource type="Resource" uid="uid://ddmxwifsb5w6t" path="res://Resources/Stone/rockSpawnEntry.tres" id="5_272bh"]
 [ext_resource type="PackedScene" uid="uid://b3wt5av4cax6d" path="res://build_menu.tscn" id="5_dg77c"]
 [ext_resource type="Resource" uid="uid://cl8ry6o37a1y" path="res://Resources/Wood/treeSpawnEntry.tres" id="6_5vw27"]
-[ext_resource type="Resource" uid="uid://dmjb0mkujxd7" path="res://RecipeBook.tres" id="6_ycdy4"]
 [ext_resource type="Resource" uid="uid://bp80ckuyr5hg1" path="res://Resources/Fiber/fiberSpawnEntry.tres" id="7_kek77"]
 [ext_resource type="PackedScene" uid="uid://c8chcjftse440" path="res://skill_tree.tscn" id="7_vivmo"]
 [ext_resource type="PackedScene" uid="uid://yotvdpjfrch5" path="res://experience.tscn" id="7_w48qg"]
+[ext_resource type="PackedScene" uid="uid://d0b7pcadb45h1" path="res://crafting_menu.tscn" id="8_yaehf"]
 [ext_resource type="Script" uid="uid://bg023uppomals" path="res://input_state.gd" id="9_2cqfq"]
 [ext_resource type="PackedScene" uid="uid://bppmhq52byhqi" path="res://Resources/inventory_gui.tscn" id="9_kek77"]
 [ext_resource type="Script" uid="uid://b5vy3s5eme0sb" path="res://build_manager.gd" id="11_efxa6"]
+[ext_resource type="PackedScene" uid="uid://l082a58g4slr" path="res://Buildings/Loom/loom.tscn" id="18_074og"]
 
 [sub_resource type="GDScript" id="GDScript_ig7tw"]
 script/source = "# This script sets up a simple tileset with one green tile and saves it to res://island_tileset.tres
@@ -72,6 +73,9 @@ size = Vector2(32, 32)
 [sub_resource type="CircleShape2D" id="CircleShape2D_vyatj"]
 radius = 43.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_yaehf"]
+radius = 47.042534
+
 [node name="Main" type="Node2D" unique_id=1889934952]
 script = SubResource("GDScript_ig7tw")
 
@@ -101,6 +105,13 @@ collision_mask = 20
 position = Vector2(12, 0)
 shape = SubResource("CircleShape2D_vyatj")
 
+[node name="InteractionArea" type="Area2D" parent="Player" unique_id=1083353476]
+collision_layer = 128
+collision_mask = 128
+
+[node name="Hitbox" type="CollisionShape2D" parent="Player/InteractionArea" unique_id=576056347]
+shape = SubResource("CircleShape2D_yaehf")
+
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=433982694]
 
 [node name="Inventory" type="Node" parent="Player" unique_id=312776104]
@@ -120,9 +131,11 @@ visible = false
 
 [node name="BuildMenu" parent="Player/UIManager" unique_id=237016542 instance=ExtResource("5_dg77c")]
 visible = false
-recipe_book = ExtResource("6_ycdy4")
 
 [node name="SkillTree" parent="Player/UIManager" unique_id=594196012 instance=ExtResource("7_vivmo")]
+visible = false
+
+[node name="CraftingMenu" parent="Player/UIManager" unique_id=1546509372 instance=ExtResource("8_yaehf")]
 visible = false
 
 [node name="Experience" parent="Player" unique_id=1662120501 instance=ExtResource("7_w48qg")]
@@ -152,6 +165,10 @@ build_menu = NodePath("../Player/UIManager/BuildMenu")
 inventory = NodePath("../Player/Inventory")
 tilemap = NodePath("../TileMapLayer")
 
+[node name="Loom" parent="BuildManager" unique_id=725829500 instance=ExtResource("18_074og")]
+position = Vector2(579, 283)
+
 [node name="Buildings" type="Node" parent="." unique_id=349684339]
 
 [connection signal="inventory_changed" from="Player/Inventory" to="Player/UIManager/InventoryGUI" method="refresh"]
+[connection signal="building_placed" from="BuildManager" to="Player/UIManager" method="close_menu"]

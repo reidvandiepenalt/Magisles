@@ -10,6 +10,8 @@ var preview: Node2D
 
 var can_place := true
 
+signal building_placed(menu: Control)
+
 func begin_placing(building: BuildingData):
 	selected_building = building
 	preview = building.scene.instantiate()
@@ -58,12 +60,15 @@ func place_building():
 		return
 	
 	inventory.consume(selected_building.recipe)
-	var building = selected_building.scene.instantiate()
+	var building: Building = selected_building.scene.instantiate()
 	building.global_position = preview.global_position
+	building.inventory = inventory
 	$"../Buildings".add_child(building)
 	preview.queue_free()
 	preview = null
 	selected_building = null
+	building_placed.emit(build_menu)
+	
 
 func _input(event):
 	if preview == null:

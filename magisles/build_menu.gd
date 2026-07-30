@@ -3,7 +3,6 @@ class_name BuildMenu
 
 @onready var grid = $CenterContainer/PanelContainer/MarginContainer/ScrollContainer/GridContainer
 @onready var inventory = $"../../Inventory"
-@onready var ui_manager: UIManager = $"../UIManager"
 
 @export var card_scene: PackedScene
 
@@ -24,7 +23,8 @@ func open():
 func populate():
 	for child in grid.get_children():
 		child.queue_free()
-
+	
+	print(recipe_book.building_recipes)
 	for building in recipe_book.building_recipes:
 		var card = card_scene.instantiate()
 		grid.add_child(card)

@@ -5,7 +5,7 @@ extends CollisionObject2D
 @export var drop_scene: PackedScene
 @export var drop_item: ItemData
 @export var drop_amount := 1
-@export var exp := 1
+@export var experience := 1
 
 var health := 0
 

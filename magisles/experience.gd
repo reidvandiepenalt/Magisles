@@ -20,7 +20,7 @@ func _on_resource_destroyed(player: PlayerScript, resource: Resource):
 	if player != get_parent():
 		return
 	
-	add_xp(resource.exp)
+	add_xp(resource.experience)
 
 func add_xp(amount: int):
 	xp += amount

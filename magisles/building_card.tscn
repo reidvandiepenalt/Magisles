@@ -25,6 +25,7 @@ layout_mode = 2
 horizontal_alignment = 1
 
 [node name="Icon" type="TextureRect" parent="MarginContainer/VBoxContainer" unique_id=259841810]
+custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 stretch_mode = 5
 

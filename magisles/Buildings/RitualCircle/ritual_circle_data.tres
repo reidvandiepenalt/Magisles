@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="BuildingData" format=3 uid="uid://cau68bu26l75u"]
+
+[ext_resource type="Script" uid="uid://bjee4jd338diq" path="res://BuildingData.gd" id="1_detxl"]
+[ext_resource type="Texture2D" uid="uid://beoryvupqg7nq" path="res://Buildings/RitualCircle/RitualCircle.png" id="1_e2hp6"]
+[ext_resource type="Script" uid="uid://cgslfdp12wrr2" path="res://Ingredient.gd" id="2_wci8e"]
+[ext_resource type="Resource" uid="uid://cp08mfnqal6vp" path="res://Resources/Stone/stonePickup.tres" id="3_8s4lr"]
+[ext_resource type="Script" uid="uid://c6t58jf5g66wv" path="res://RecipeData.gd" id="4_mtakq"]
+[ext_resource type="PackedScene" uid="uid://cym1yq108fxta" path="res://Buildings/RitualCircle/ritual_circle.tscn" id="5_orb11"]
+
+[sub_resource type="Resource" id="Resource_f1c02"]
+script = ExtResource("2_wci8e")
+item = ExtResource("3_8s4lr")
+amount = 10
+metadata/_custom_type_script = "uid://cgslfdp12wrr2"
+
+[sub_resource type="Resource" id="Resource_sjytr"]
+script = ExtResource("4_mtakq")
+ingredients = Array[ExtResource("2_wci8e")]([SubResource("Resource_f1c02")])
+metadata/_custom_type_script = "uid://c6t58jf5g66wv"
+
+[resource]
+script = ExtResource("1_detxl")
+display_name = "Ritual Circle"
+icon = ExtResource("1_e2hp6")
+recipe = SubResource("Resource_sjytr")
+scene = ExtResource("5_orb11")
+metadata/_custom_type_script = "uid://bjee4jd338diq"

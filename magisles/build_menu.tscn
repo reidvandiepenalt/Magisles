@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bngtbji27k6tj" path="res://build_menu.gd" id="1_rdxwr"]
 [ext_resource type="PackedScene" uid="uid://c0rptq2cqj3ne" path="res://building_card.tscn" id="2_wdvmw"]
+[ext_resource type="Resource" uid="uid://dmjb0mkujxd7" path="res://RecipeBook.tres" id="3_ldsyu"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wdvmw"]
 
@@ -15,6 +16,7 @@ grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_rdxwr")
 card_scene = ExtResource("2_wdvmw")
+recipe_book = ExtResource("3_ldsyu")
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1048495497]
 layout_mode = 1

@@ -23,8 +23,27 @@ func handle_movement(_delta: float) -> void:
 		$Tool.rotation = direction.angle()
 
 func _input(event):
-	if event.is_action_pressed("use_tool") && can_swing && input_state.gameplay_enabled():
+	if !input_state.gameplay_enabled():
+		return;
+	
+	if event.is_action_pressed("use_tool") && can_swing:
 		swing_tool()
+	elif event.is_action_pressed("interact"):
+		use_interact()
+
+func use_interact():
+	var closest = null
+	var closest_distance = INF
+	
+	for area in $InteractionArea.get_overlapping_areas():
+		var d = global_position.distance_squared_to(area.global_position)
+		if d < closest_distance:
+			closest_distance = d
+			closest = area
+	
+	if closest:
+		closest.interact(self)
+
 
 func swing_tool():
 	can_swing = false

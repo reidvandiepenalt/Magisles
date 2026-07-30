@@ -30,6 +30,9 @@ func open_menu(menu: Control):
 func close_menu(menu: Control):
 	if current_menu != menu:
 		return
+	
+	if !current_menu:
+		return
 
 	current_menu.visible = false
 	current_menu = null

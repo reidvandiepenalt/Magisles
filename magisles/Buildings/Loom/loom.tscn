@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://l082a58g4slr"]
+
+[ext_resource type="Script" uid="uid://l6fnuxp3k2dt" path="res://Buildings/building.gd" id="1_n6ava"]
+[ext_resource type="Texture2D" uid="uid://b2pkfhhhhs70q" path="res://Buildings/Loom/Loom.png" id="1_wbf17"]
+[ext_resource type="Script" uid="uid://dkw2wd6g718af" path="res://CraftingRecipeData.gd" id="2_kv1nf"]
+[ext_resource type="Script" uid="uid://b1mjvd7gkcq5e" path="res://Buildings/Loom/interaction_area.gd" id="3_k03ko"]
+[ext_resource type="Resource" uid="uid://247ik4do855f" path="res://Buildings/Loom/string_recipe.tres" id="3_ps2xj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dg77c"]
+size = Vector2(58, 38)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vyatj"]
+radius = 54.00926
+
+[node name="Loom" type="StaticBody2D" unique_id=725829500]
+collision_layer = 64
+collision_mask = 0
+script = ExtResource("1_n6ava")
+crafting_recipes = Array[ExtResource("2_kv1nf")]([ExtResource("3_ps2xj")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1386489136]
+position = Vector2(0, -19)
+shape = SubResource("RectangleShape2D_dg77c")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=579282915]
+position = Vector2(0, -49)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_wbf17")
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=59526378]
+collision_layer = 128
+collision_mask = 0
+script = ExtResource("3_k03ko")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1943438562]
+shape = SubResource("CircleShape2D_vyatj")

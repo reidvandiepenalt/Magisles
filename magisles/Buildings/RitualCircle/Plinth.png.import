@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2pkfhhhhs70q"
-path="res://.godot/imported/Loom.png-06da192f0fb474b793e65806e44f07f6.ctex"
+uid="uid://cfwqahr18eg37"
+path="res://.godot/imported/Plinth.png-cf7708ef54b912ac0191261db5f08d97.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Buildings/Loom.png"
-dest_files=["res://.godot/imported/Loom.png-06da192f0fb474b793e65806e44f07f6.ctex"]
+source_file="res://Buildings/RitualCircle/Plinth.png"
+dest_files=["res://.godot/imported/Plinth.png-cf7708ef54b912ac0191261db5f08d97.ctex"]
 
 [params]
 

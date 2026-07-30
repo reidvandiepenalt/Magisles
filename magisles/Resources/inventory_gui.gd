@@ -4,7 +4,6 @@ extends Control
 
 @onready var item_list = $CenterContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer
 @onready var inventory: Inventory = $"../../Inventory"
-@onready var ui_manager: UIManager = $"../UIManager"
 
 func _ready():
 	inventory.inventory_changed.connect(refresh)

@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="CraftingRecipeData" format=3 uid="uid://247ik4do855f"]
+
+[ext_resource type="Resource" uid="uid://bm2h00bgsitqh" path="res://Resources/String/string_resource.tres" id="1_71rk4"]
+[ext_resource type="Script" uid="uid://dkw2wd6g718af" path="res://CraftingRecipeData.gd" id="1_82p06"]
+[ext_resource type="Script" uid="uid://cgslfdp12wrr2" path="res://Ingredient.gd" id="2_6e3jr"]
+[ext_resource type="Resource" uid="uid://bntbm51kw3xkg" path="res://Resources/Fiber/fiberPickup.tres" id="3_x05f7"]
+[ext_resource type="Script" uid="uid://c6t58jf5g66wv" path="res://RecipeData.gd" id="4_doi03"]
+
+[sub_resource type="Resource" id="Resource_sbugw"]
+script = ExtResource("2_6e3jr")
+item = ExtResource("3_x05f7")
+amount = 3
+metadata/_custom_type_script = "uid://cgslfdp12wrr2"
+
+[sub_resource type="Resource" id="Resource_iksa4"]
+script = ExtResource("4_doi03")
+ingredients = Array[ExtResource("2_6e3jr")]([SubResource("Resource_sbugw")])
+metadata/_custom_type_script = "uid://c6t58jf5g66wv"
+
+[resource]
+script = ExtResource("1_82p06")
+recipe = SubResource("Resource_iksa4")
+output = ExtResource("1_71rk4")
+crafting_time = 5.0
+metadata/_custom_type_script = "uid://dkw2wd6g718af"
