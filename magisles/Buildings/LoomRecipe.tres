@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="RecipeData" format=3 uid="uid://d3hovt6cf3btf"]
+
+[ext_resource type="Script" uid="uid://cgslfdp12wrr2" path="res://Ingredient.gd" id="1_6r20d"]
+[ext_resource type="Resource" uid="uid://c3el3p2vrsg5u" path="res://Resources/Wood/woodPickup.tres" id="2_nxspk"]
+[ext_resource type="Script" uid="uid://c6t58jf5g66wv" path="res://RecipeData.gd" id="2_q2vcd"]
+[ext_resource type="Resource" uid="uid://bntbm51kw3xkg" path="res://Resources/Fiber/fiberPickup.tres" id="3_irnwx"]
+
+[sub_resource type="Resource" id="Resource_nxspk"]
+script = ExtResource("1_6r20d")
+item = ExtResource("2_nxspk")
+amount = 10
+metadata/_custom_type_script = "uid://cgslfdp12wrr2"
+
+[sub_resource type="Resource" id="Resource_irnwx"]
+script = ExtResource("1_6r20d")
+item = ExtResource("3_irnwx")
+amount = 3
+metadata/_custom_type_script = "uid://cgslfdp12wrr2"
+
+[resource]
+script = ExtResource("2_q2vcd")
+ingredients = Array[ExtResource("1_6r20d")]([SubResource("Resource_nxspk"), SubResource("Resource_irnwx")])
+metadata/_custom_type_script = "uid://c6t58jf5g66wv"

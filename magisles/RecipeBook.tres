@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="RecipeBook" format=3 uid="uid://dmjb0mkujxd7"]
+
+[ext_resource type="Script" uid="uid://bjee4jd338diq" path="res://BuildingData.gd" id="1_8lfjt"]
+[ext_resource type="Resource" uid="uid://0ygfgxnkifpy" path="res://Buildings/LoomData.tres" id="2_2t12b"]
+[ext_resource type="Script" uid="uid://dkw2wd6g718af" path="res://CraftingRecipeData.gd" id="3_7efa1"]
+[ext_resource type="Script" uid="uid://celgwq2l5ybt1" path="res://RecipeBook.gd" id="4_x6ljj"]
+
+[resource]
+script = ExtResource("4_x6ljj")
+building_recipes = Array[ExtResource("1_8lfjt")]([ExtResource("2_2t12b")])
+metadata/_custom_type_script = "uid://celgwq2l5ybt1"

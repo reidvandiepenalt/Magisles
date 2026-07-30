@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cwp2aptr5a2lw"]
+
+[ext_resource type="Script" uid="uid://dqd780q6ngkgk" path="res://cost_row.gd" id="1_r1njq"]
+
+[node name="CostRow" type="HBoxContainer" unique_id=3052787]
+z_index = 10
+offset_right = 40.0
+offset_bottom = 40.0
+alignment = 1
+script = ExtResource("1_r1njq")
+
+[node name="Icon" type="TextureRect" parent="." unique_id=304057728]
+z_index = 10
+layout_mode = 2
+
+[node name="Emoji" type="Label" parent="." unique_id=1913764514]
+z_index = 10
+layout_mode = 2
+
+[node name="Label" type="Label" parent="." unique_id=593843778]
+z_index = 10
+layout_mode = 2

@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://c0rptq2cqj3ne"]
+
+[ext_resource type="Script" uid="uid://1uw3ow67jfeb" path="res://building_card.gd" id="1_fu7bb"]
+[ext_resource type="PackedScene" uid="uid://cwp2aptr5a2lw" path="res://cost_row.tscn" id="2_snmy5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_snmy5"]
+
+[node name="BuildingCard" type="PanelContainer" unique_id=1211419099]
+z_index = 10
+custom_minimum_size = Vector2(180, 240)
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_snmy5")
+script = ExtResource("1_fu7bb")
+ingredient_row_scene = ExtResource("2_snmy5")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1030130491]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=820851605]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1527619612]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="MarginContainer/VBoxContainer" unique_id=259841810]
+layout_mode = 2
+stretch_mode = 5
+
+[node name="CostContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1274601990]
+layout_mode = 2
+alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1497318323]
+layout_mode = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.47843137)

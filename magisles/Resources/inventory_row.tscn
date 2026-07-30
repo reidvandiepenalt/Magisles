@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://c6fgli74iacu0"]
+
+[ext_resource type="Script" uid="uid://btxlisgtfhk7x" path="res://Resources/inventory_row.gd" id="1_5xms6"]
+
+[node name="InventoryRow" type="HBoxContainer" unique_id=1993758809]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_5xms6")
+
+[node name="Icon" type="TextureRect" parent="." unique_id=645939086]
+layout_mode = 2
+
+[node name="Emoji" type="Label" parent="." unique_id=1772031]
+layout_mode = 2
+
+[node name="ItemName" type="Label" parent="." unique_id=497366463]
+layout_mode = 2
+
+[node name="Amount" type="Label" parent="." unique_id=598936551]
+layout_mode = 2

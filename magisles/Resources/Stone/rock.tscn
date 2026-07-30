@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://deo1d4txaro05"]
+
+[ext_resource type="Texture2D" uid="uid://kk4kaybsoiym" path="res://Resources/Stone/rock.png" id="1_o0qsl"]
+[ext_resource type="Script" uid="uid://dpvvf6geuu6m7" path="res://Resources/resource.gd" id="1_yp4wg"]
+[ext_resource type="PackedScene" uid="uid://6s8yojkq66o7" path="res://Resources/pickup.tscn" id="2_y6o24"]
+[ext_resource type="Resource" uid="uid://cp08mfnqal6vp" path="res://Resources/Stone/stonePickup.tres" id="3_rrnoe"]
+[ext_resource type="Script" uid="uid://bwlhjoxmlemdw" path="res://Hurtbox.gd" id="3_vuapv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hkitf"]
+size = Vector2(16, 15)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vyatj"]
+radius = 12.0
+
+[node name="Rock" type="StaticBody2D" unique_id=882371106]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_yp4wg")
+max_health = 8
+drop_scene = ExtResource("2_y6o24")
+drop_item = ExtResource("3_rrnoe")
+exp = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1806967109]
+texture = ExtResource("1_o0qsl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=146262012]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_hkitf")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=171682905]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("3_vuapv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1083136464]
+shape = SubResource("CircleShape2D_vyatj")

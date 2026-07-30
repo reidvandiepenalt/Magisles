@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://bppmhq52byhqi"]
+
+[ext_resource type="Script" uid="uid://bgmm0gys21tn3" path="res://Resources/inventory_gui.gd" id="1_88fje"]
+[ext_resource type="PackedScene" uid="uid://c6fgli74iacu0" path="res://Resources/inventory_row.tscn" id="2_4ca0k"]
+
+[node name="InventoryGUI" type="Control" unique_id=699821378]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_88fje")
+row_scene = ExtResource("2_4ca0k")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=112410329]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.24705882)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=2130970471]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CenterContainer" unique_id=1005315576]
+custom_minimum_size = Vector2(400, 500)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/Panel" unique_id=21892180]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CenterContainer/Panel/MarginContainer" unique_id=900115955]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Panel/MarginContainer/ScrollContainer" unique_id=2036514562]
+layout_mode = 2

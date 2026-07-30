@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="BuildingData" format=3 uid="uid://0ygfgxnkifpy"]
+
+[ext_resource type="Script" uid="uid://bjee4jd338diq" path="res://BuildingData.gd" id="1_4wq61"]
+[ext_resource type="Texture2D" uid="uid://w8niauynrssa" path="res://icon.svg" id="1_a03id"]
+[ext_resource type="Resource" uid="uid://d3hovt6cf3btf" path="res://Buildings/LoomRecipe.tres" id="2_a43dn"]
+[ext_resource type="PackedScene" uid="uid://l082a58g4slr" path="res://Buildings/loom.tscn" id="3_vbkso"]
+
+[resource]
+script = ExtResource("1_4wq61")
+display_name = "Loom"
+icon = ExtResource("1_a03id")
+recipe = ExtResource("2_a43dn")
+scene = ExtResource("3_vbkso")
+metadata/_custom_type_script = "uid://bjee4jd338diq"

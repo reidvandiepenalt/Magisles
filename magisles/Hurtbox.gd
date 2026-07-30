@@ -1,4 +1,5 @@
 extends Area2D
+class_name Hurtbox
 
-func damage(amount: int):
-	get_parent().damage(amount)
+func damage(player: PlayerScript, amount: int):
+	get_parent().damage(player, amount)

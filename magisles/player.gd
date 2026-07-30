@@ -1,23 +1,33 @@
 extends CharacterBody2D
+class_name PlayerScript
 
 @export var speed: float = 200.0
+@onready var inventory: Inventory = $Inventory
+@onready var input_state: InputState = $InputState
+
+@export var swing_cooldown := 0.25
 var can_swing := true
 
 func _ready() -> void:
 	return
 
 func _physics_process(_delta) -> void:
+	if input_state.gameplay_enabled():
+		handle_movement(_delta)
+
+func handle_movement(_delta: float) -> void:
 	var direction = Input.get_vector("Left", "Right", "Up", "Down")
 	velocity = direction * speed
 	move_and_slide()
 	if direction != Vector2.ZERO:
 		$Tool.rotation = direction.angle()
 
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("use_tool") && can_swing:
+func _input(event):
+	if event.is_action_pressed("use_tool") && can_swing && input_state.gameplay_enabled():
 		swing_tool()
 
 func swing_tool():
+	can_swing = false
 	var closest = null
 	var closest_distance = INF
 	
@@ -28,4 +38,8 @@ func swing_tool():
 			closest = area
 	
 	if closest:
-		closest.damage(1)
+		closest.damage(self, 1)
+	
+	await get_tree().create_timer(swing_cooldown).timeout
+	
+	can_swing = true

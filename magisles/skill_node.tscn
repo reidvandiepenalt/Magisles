@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://coymgi7m5gp5y"]
+
+[ext_resource type="Script" uid="uid://br84crkhe2edq" path="res://skill_node.gd" id="1_m8cli"]
+[ext_resource type="Texture2D" uid="uid://15aulg87bu0s" path="res://hexagon-geometrical-shape-outline-svgrepo-com.svg" id="2_fbu8u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fbu8u"]
+
+[node name="SkillNode" type="Button" unique_id=442407920]
+custom_minimum_size = Vector2(40, 40)
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fbu8u")
+script = ExtResource("1_m8cli")
+
+[node name="Icon" type="TextureRect" parent="." unique_id=993254052]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 23.0
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1767191782]
+custom_maximum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.5235988
+pivot_offset = Vector2(20, 20)
+texture = ExtResource("2_fbu8u")

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="SkillData" format=3 uid="uid://d110pb1adu4a5"]
+
+[ext_resource type="Script" uid="uid://bx4q14v8j8nce" path="res://Skills/skill_data.gd" id="1_47tfr"]
+
+[resource]
+script = ExtResource("1_47tfr")
+display_name = "Light Skill 1"
+description = "Test"
+metadata/_custom_type_script = "uid://bx4q14v8j8nce"

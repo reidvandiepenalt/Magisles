@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cp08mfnqal6vp"]
+
+[ext_resource type="Script" uid="uid://qkgaxiixvc7x" path="res://ItemData.gd" id="1_natf5"]
+[ext_resource type="Texture2D" uid="uid://coe0b3ixpusvd" path="res://Resources/ResourceIconSpritesheet.png" id="1_xpg53"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8m1m"]
+atlas = ExtResource("1_xpg53")
+region = Rect2(32, 0, 16, 16)
+filter_clip = true
+
+[resource]
+script = ExtResource("1_natf5")
+item_name = "Stone"
+icon = SubResource("AtlasTexture_u8m1m")
+emoji = "🪨"
+metadata/_custom_type_script = "uid://qkgaxiixvc7x"

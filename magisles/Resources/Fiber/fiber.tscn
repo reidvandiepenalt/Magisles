@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://2iq3yo2xlajy"]
+
+[ext_resource type="Texture2D" uid="uid://cmqve703240vk" path="res://Resources/Fiber/fiber.png" id="1_mfio7"]
+[ext_resource type="Script" uid="uid://dpvvf6geuu6m7" path="res://Resources/resource.gd" id="1_uqhra"]
+[ext_resource type="PackedScene" uid="uid://6s8yojkq66o7" path="res://Resources/pickup.tscn" id="2_xk7a7"]
+[ext_resource type="Resource" uid="uid://bntbm51kw3xkg" path="res://Resources/Fiber/fiberPickup.tres" id="3_jfk5n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xvooq"]
+size = Vector2(25, 20)
+
+[node name="Fiber" type="Area2D" unique_id=2112574085]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_uqhra")
+max_health = 2
+drop_scene = ExtResource("2_xk7a7")
+drop_item = ExtResource("3_jfk5n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=848178317]
+position = Vector2(0.5, 6)
+shape = SubResource("RectangleShape2D_xvooq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=424179842]
+texture = ExtResource("1_mfio7")

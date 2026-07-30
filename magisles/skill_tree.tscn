@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://c8chcjftse440"]
+
+[ext_resource type="Script" uid="uid://ckktpmhvomfwg" path="res://skill_tree.gd" id="1_217a5"]
+[ext_resource type="PackedScene" uid="uid://coymgi7m5gp5y" path="res://skill_node.tscn" id="2_fmctd"]
+[ext_resource type="Script" uid="uid://bx4q14v8j8nce" path="res://Skills/skill_data.gd" id="3_t5gwv"]
+[ext_resource type="Resource" uid="uid://d110pb1adu4a5" path="res://Skills/test_skill.tres" id="4_itn7s"]
+[ext_resource type="Resource" uid="uid://bbsd3c5ewdxrt" path="res://Skills/test_skill_2.tres" id="5_jrb25"]
+[ext_resource type="Resource" uid="uid://bffokbtnvfvdb" path="res://Skills/test_skill_3.tres" id="6_sdnbj"]
+[ext_resource type="Resource" uid="uid://kb0jde4slgl8" path="res://Skills/test_skill_4.tres" id="7_46aa3"]
+[ext_resource type="Resource" uid="uid://x66ttmkxhwca" path="res://Skills/test_skill_5.tres" id="8_0rout"]
+[ext_resource type="Resource" uid="uid://b3tp7xp8pgqjm" path="res://Skills/test_skill_6.tres" id="9_lrvki"]
+[ext_resource type="Resource" uid="uid://cgbf60g63uubg" path="res://Skills/test_skill_7.tres" id="10_d4sjy"]
+[ext_resource type="Resource" uid="uid://dlu2fvqidls2t" path="res://Skills/test_skill_8.tres" id="11_cdydi"]
+[ext_resource type="Resource" uid="uid://bmdgj0n707h0x" path="res://Skills/test_skill_9.tres" id="12_4cf1k"]
+
+[node name="SkillTree" type="Control" unique_id=594196012]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_217a5")
+skill_scene = ExtResource("2_fmctd")
+skills = Array[ExtResource("3_t5gwv")]([ExtResource("4_itn7s"), ExtResource("5_jrb25"), ExtResource("6_sdnbj"), ExtResource("7_46aa3"), ExtResource("8_0rout"), ExtResource("9_lrvki"), ExtResource("10_d4sjy"), ExtResource("11_cdydi"), ExtResource("12_4cf1k")])
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=540287153]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.2509804)
+
+[node name="Nodes" type="Control" parent="." unique_id=1817105538]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

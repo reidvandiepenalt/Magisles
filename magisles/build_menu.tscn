@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://b3wt5av4cax6d"]
+
+[ext_resource type="Script" uid="uid://bngtbji27k6tj" path="res://build_menu.gd" id="1_rdxwr"]
+[ext_resource type="PackedScene" uid="uid://c0rptq2cqj3ne" path="res://building_card.tscn" id="2_wdvmw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wdvmw"]
+
+[node name="BuildMenu" type="Control" unique_id=237016542]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_rdxwr")
+card_scene = ExtResource("2_wdvmw")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1048495497]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer" unique_id=1712506182]
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxEmpty_wdvmw")
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer" unique_id=1674322240]
+z_index = 1
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CenterContainer/PanelContainer/MarginContainer" unique_id=744229056]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer/PanelContainer/MarginContainer/ScrollContainer" unique_id=1757975251]
+layout_mode = 2
+columns = 4
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1523821723]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.2509804)
