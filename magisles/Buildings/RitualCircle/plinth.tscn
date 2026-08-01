@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://bmi75rkawm6by"]
 
+[ext_resource type="Script" uid="uid://sbnqx8rlh5gm" path="res://Buildings/RitualCircle/plinth.gd" id="1_bgvjh"]
 [ext_resource type="Texture2D" uid="uid://cfwqahr18eg37" path="res://Buildings/RitualCircle/Plinth.png" id="1_s2kl4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bgvjh"]
 size = Vector2(10, 8)
 
 [node name="Plinth" type="StaticBody2D" unique_id=2126214015]
+script = ExtResource("1_bgvjh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1313675928]
 position = Vector2(0, -2)

@@ -24,4 +24,4 @@ func setup(recipe: CraftingRecipeData, building: Building):
 
 
 func _on_button_pressed():
-	building_ref.start_crafting(recipe_data)
+	building_ref.craft(recipe_data)

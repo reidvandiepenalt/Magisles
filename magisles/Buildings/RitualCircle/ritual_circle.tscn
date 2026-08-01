@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://cym1yq108fxta"]
 
+[ext_resource type="Script" uid="uid://jbl4fti4hg10" path="res://Buildings/RitualCircle/ritual_circle.gd" id="1_jivt6"]
 [ext_resource type="Texture2D" uid="uid://beoryvupqg7nq" path="res://Buildings/RitualCircle/RitualCircle.png" id="1_sbrr2"]
 [ext_resource type="PackedScene" uid="uid://bmi75rkawm6by" path="res://Buildings/RitualCircle/plinth.tscn" id="2_p8odj"]
 
 [node name="RitualCircle" type="Node2D" unique_id=1201546672]
+script = ExtResource("1_jivt6")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1709514306]
 scale = Vector2(2, 2)

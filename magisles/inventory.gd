@@ -53,6 +53,28 @@ func consume(recipe: RecipeData):
 	inventory_changed.emit()
 	return true
 
+func has_items_ingredient(ingredient: Ingredient):
+	if get_amount(ingredient.item) < ingredient.amount:
+		return false
+	
+	return true
+
+func consume_ingredient(ingredient: Ingredient):
+	if !has_items_ingredient(ingredient):
+		return false
+		
+	if ingredient.amount <= 0:
+		return true
+		
+	items[ingredient.item] -= ingredient.amount
+	item_removed.emit(ingredient.item, ingredient.amount)
+		
+	if items[ingredient.item] <= 0:
+		items.erase(ingredient.item)
+	
+	inventory_changed.emit()
+	return true
+
 
 func get_missing_items(recipe: RecipeData) -> Array[Ingredient]:
 	var missing: Array[Ingredient] = []
