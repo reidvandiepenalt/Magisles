@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cxce8dx13g5cj"]
+
+[sub_resource type="Gradient" id="Gradient_xwj83"]
+colors = PackedColorArray(0.8080321, 0.50219744, 0, 1, 0.8547964, 0.6333914, 0.30010733, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_vyatj"]
+gradient = SubResource("Gradient_xwj83")
+
+[node name="ExpBar" type="Control" unique_id=280333418]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1071545628]
+propagate_maximum_size = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -40.0
+offset_right = 128.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 17
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="MarginContainer" unique_id=1555899968]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+step = 0.0
+nine_patch_stretch = true
+texture_progress = SubResource("GradientTexture1D_vyatj")

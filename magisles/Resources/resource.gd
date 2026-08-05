@@ -1,5 +1,6 @@
 # Resource.gd
 extends CollisionObject2D
+class_name ResourceItem
 
 @export var max_health := 3
 @export var drop_scene: PackedScene
@@ -9,12 +10,17 @@ extends CollisionObject2D
 
 var health := 0
 
+@onready var health_bar = $ResourceHealthBar
+
 func _ready():
 	health = max_health
+	health_bar.ready_health(health, max_health)
 
 func damage(player: PlayerScript, amount: int, ):
 	health -= amount
-
+	
+	health_bar.set_health(health)
+	
 	if health <= 0:
 		on_destroyed(player)
 
@@ -26,5 +32,5 @@ func on_destroyed(player: PlayerScript):
 		pickup.global_position = global_position
 		get_tree().current_scene.add_child(pickup)
 		pickup.launch()
-		
+	
 	queue_free()

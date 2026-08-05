@@ -24,6 +24,14 @@ script = ExtResource("1_217a5")
 skill_scene = ExtResource("2_fmctd")
 skills = Array[ExtResource("3_t5gwv")]([ExtResource("4_itn7s"), ExtResource("5_jrb25"), ExtResource("6_sdnbj"), ExtResource("7_46aa3"), ExtResource("8_0rout"), ExtResource("9_lrvki"), ExtResource("10_d4sjy"), ExtResource("11_cdydi"), ExtResource("12_4cf1k")])
 
+[node name="Nodes" type="Control" parent="." unique_id=1817105538]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="ColorRect" type="ColorRect" parent="." unique_id=540287153]
 layout_mode = 1
 anchors_preset = 15
@@ -33,10 +41,22 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.2509804)
 
-[node name="Nodes" type="Control" parent="." unique_id=1817105538]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=565195214]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 33.0
+offset_bottom = 55.0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=289298495]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer" unique_id=533144570]
+layout_mode = 2
+text = "Skill Points: "
+
+[node name="SkillPointsNumber" type="Label" parent="MarginContainer/HBoxContainer" unique_id=1837525115]
+layout_mode = 2
+text = "0"

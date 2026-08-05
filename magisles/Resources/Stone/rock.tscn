@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://6s8yojkq66o7" path="res://Resources/pickup.tscn" id="2_y6o24"]
 [ext_resource type="Resource" uid="uid://cp08mfnqal6vp" path="res://Resources/Stone/stonePickup.tres" id="3_rrnoe"]
 [ext_resource type="Script" uid="uid://bwlhjoxmlemdw" path="res://Hurtbox.gd" id="3_vuapv"]
+[ext_resource type="PackedScene" uid="uid://ckwr5d3uywuof" path="res://resource_health_bar.tscn" id="6_rrnoe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hkitf"]
 size = Vector2(16, 15)
@@ -19,7 +20,6 @@ script = ExtResource("1_yp4wg")
 max_health = 8
 drop_scene = ExtResource("2_y6o24")
 drop_item = ExtResource("3_rrnoe")
-exp = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1806967109]
 texture = ExtResource("1_o0qsl")
@@ -35,3 +35,6 @@ script = ExtResource("3_vuapv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1083136464]
 shape = SubResource("CircleShape2D_vyatj")
+
+[node name="ResourceHealthBar" parent="." unique_id=843834284 instance=ExtResource("6_rrnoe")]
+position = Vector2(0, 18)

@@ -15,7 +15,9 @@
 [ext_resource type="PackedScene" uid="uid://yotvdpjfrch5" path="res://experience.tscn" id="7_w48qg"]
 [ext_resource type="PackedScene" uid="uid://d0b7pcadb45h1" path="res://crafting_menu.tscn" id="8_yaehf"]
 [ext_resource type="Script" uid="uid://bg023uppomals" path="res://input_state.gd" id="9_2cqfq"]
+[ext_resource type="PackedScene" uid="uid://cxce8dx13g5cj" path="res://exp_bar.tscn" id="9_cegan"]
 [ext_resource type="PackedScene" uid="uid://bppmhq52byhqi" path="res://Resources/inventory_gui.tscn" id="9_kek77"]
+[ext_resource type="Script" uid="uid://cl6dm4b267pn7" path="res://exp_bar.gd" id="10_82xsv"]
 [ext_resource type="Script" uid="uid://b5vy3s5eme0sb" path="res://build_manager.gd" id="11_efxa6"]
 [ext_resource type="PackedScene" uid="uid://l082a58g4slr" path="res://Buildings/Loom/loom.tscn" id="18_074og"]
 
@@ -138,6 +140,9 @@ visible = false
 [node name="CraftingMenu" parent="Player/UIManager" unique_id=1546509372 instance=ExtResource("8_yaehf")]
 visible = false
 
+[node name="ExpBar" parent="Player/UIManager" unique_id=280333418 instance=ExtResource("9_cegan")]
+script = ExtResource("10_82xsv")
+
 [node name="Experience" parent="Player" unique_id=1662120501 instance=ExtResource("7_w48qg")]
 
 [node name="InputState" type="Node" parent="Player" unique_id=1651096073]
@@ -171,4 +176,6 @@ position = Vector2(579, 283)
 [node name="Buildings" type="Node" parent="." unique_id=349684339]
 
 [connection signal="inventory_changed" from="Player/Inventory" to="Player/UIManager/InventoryGUI" method="refresh"]
+[connection signal="level_changed_by" from="Player/Experience" to="Player/UIManager/SkillTree" method="update_skill_points"]
+[connection signal="xp_changed" from="Player/Experience" to="Player/UIManager/ExpBar" method="update_exp_bar"]
 [connection signal="building_placed" from="BuildManager" to="Player/UIManager" method="close_menu"]

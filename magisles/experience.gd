@@ -16,7 +16,7 @@ func _ready():
 func required_xp() -> int:
 	return roundi(base_xp * pow(growth, level - 1))
 
-func _on_resource_destroyed(player: PlayerScript, resource: Resource):
+func _on_resource_destroyed(player: PlayerScript, resource: ResourceItem):
 	if player != get_parent():
 		return
 	

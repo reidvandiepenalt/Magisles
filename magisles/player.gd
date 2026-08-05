@@ -26,7 +26,7 @@ func _input(event):
 	if !input_state.gameplay_enabled():
 		return;
 	
-	if event.is_action_pressed("use_tool") && can_swing:
+	if event.is_action("use_tool") && can_swing:
 		swing_tool()
 	elif event.is_action_pressed("interact"):
 		use_interact()
